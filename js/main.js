@@ -5,6 +5,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // back top
   var backTop = document.querySelector("#back-top");
+
+  // show sub menu mb
+  var subMenu = document.querySelector(".sub-menu-mb-wrapper");
+  var showSubMenu = document.querySelector(".navbar-mb-item__bar");
+
   const app = {
     // su ly cac su kien
     handleEvent: function () {
@@ -29,6 +34,33 @@ document.addEventListener("DOMContentLoaded", function () {
           document.documentElement.scrollTop = 0;
         };
       }
+      // show sub menu
+      if (showSubMenu) {
+        showSubMenu.onclick = function () {
+          if (subMenu) {
+            subMenu.classList.add("active");
+          }
+        };
+      }
+      if (subMenu) {
+        var subListMenu = subMenu.querySelectorAll(".sub-menu-mb-item");
+        var closeSubMenu = subMenu.querySelector(".close-sub-menu");
+        subListMenu.forEach(function (a) {
+          if (a.querySelector(".sub-menu-mb-icon")) {
+            a.querySelector(".sub-menu-mb-icon").onclick = function () {
+              if (a.classList.contains("active")) {
+                a.classList.remove("active");
+              } else {
+                a.classList.add("active");
+              }
+            };
+          }
+        });
+        closeSubMenu.onclick = function () {
+          subMenu.classList.remove("active");
+        };
+      }
+
       // hide cac element khi click ra ngoai
       document.addEventListener("click", function (e) {
         if (openSearch && search) {
