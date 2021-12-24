@@ -1,37 +1,87 @@
-
 document.addEventListener("DOMContentLoaded", function () {
-    
+  // show search
+  var openSearch = document.querySelector(".top-header__right-item--search");
+  var search = document.querySelector(".search");
 
-
-    const app = {
-      
-      // su ly cac su kien
-      handleEvent: function () {
-        const _this = this;
-        
-        
-        // hide cac element khi click ra ngoai
-        document.addEventListener('click',function(e){
-          
-        })
-      },
-      
-      // window scroll
-      windowScroll:function(){
-        var _this = this;
-        window.onscroll = function(){
-          
+  // back top
+  var backTop = document.querySelector("#back-top");
+  const app = {
+    // su ly cac su kien
+    handleEvent: function () {
+      const _this = this;
+      // show search
+      if (openSearch) {
+        if (search) {
+          openSearch.onclick = function () {
+            if (search.classList.contains("show")) {
+              search.classList.remove("show");
+            } else {
+              search.classList.add("show");
+            }
+          };
         }
-      },
-      // khoi tao function start
-      start: function () {
-        
-        // su ly cac su kien
-        this.handleEvent();
-        // window scroll
-        this.windowScroll();
-      },
-    };
-  
-    app.start();
-  });
+      }
+
+      // when click back top
+      if (backTop) {
+        backTop.onclick = function () {
+          document.body.scrollTop = 0;
+          document.documentElement.scrollTop = 0;
+        };
+      }
+      // hide cac element khi click ra ngoai
+      document.addEventListener("click", function (e) {
+        if (openSearch && search) {
+          if (
+            !search.contains(e.target) &&
+            !e.target.matches(".top-header__right-item--search")
+          ) {
+            search.classList.remove("show");
+          }
+        }
+      });
+    },
+    // sticky sidebar main
+    stickySlidebarMain: function () {
+      $(".leftSidebar, .rightSidebar").theiaStickySidebar({
+        containerSelector: "#main-row-3",
+        additionalMarginTop: 60,
+        additionalMarginBottom: 20,
+      });
+    },
+    // scroll top
+    scrollFunc: function () {
+      if (backTop) {
+        if (
+          document.body.scrollTop > 300 ||
+          document.documentElement.scrollTop > 300
+        ) {
+          backTop.style.opacity = 1;
+          backTop.style.visibility = "visible";
+        } else {
+          backTop.style.opacity = 0;
+          backTop.style.visibility = "hidden";
+        }
+      }
+    },
+    // window scroll
+    windowScroll: function () {
+      var _this = this;
+      window.onscroll = function () {
+        // scroll top
+        _this.scrollFunc();
+      };
+    },
+    // khoi tao function start
+    start: function () {
+      // su ly cac su kien
+      this.handleEvent();
+      // window scroll
+      this.windowScroll();
+      // sticky sidebar main
+      this.stickySlidebarMain();
+    },
+  };
+
+  app.start();
+});

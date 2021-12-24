@@ -1,3 +1,117 @@
+@media (max-width: 64em) {
+  .main-row-one,
+.main-footer,
+.main-row-one__left--thumb,
+.main-row-two,
+.main-row-two__left--content,
+.main-row-two__right--content,
+.main-row-three,
+.business,
+.d-grid,
+.technology-list,
+.brand-story,
+.read-a-lot {
+    grid-template-columns: 1fr;
+  }
 
+  .navbar-footer--list {
+    flex-wrap: nowrap;
+    white-space: nowrap;
+    overflow-x: scroll;
+    padding: 0 1rem;
+  }
+
+  .main-footer {
+    padding: 2.5rem 1.25rem;
+  }
+
+  #main {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+
+  .main-row-three__left-block-img {
+    width: 35%;
+  }
+
+  .main-row-three__left-block-img > .border-6 {
+    border-radius: 0.25rem;
+    -webkit-border-radius: 0.25rem;
+    -moz-border-radius: 0.25rem;
+    -ms-border-radius: 0.25rem;
+    -o-border-radius: 0.25rem;
+  }
+
+  .main-row-three__left-block-content {
+    width: 65%;
+    padding-left: 0.625rem;
+  }
+
+  .main-row-three__left-block-category,
+.main-row-three__left-block-time {
+    font-size: 0.6875rem;
+  }
+
+  .main-row-three__left-block-title {
+    font-size: 0.875rem;
+  }
+
+  .article-content .main-row-one__left--large-sapo,
+.navigation-bar-wrapper {
+    display: none;
+  }
+
+  .main-header__right {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+    flex-wrap: nowrap;
+    white-space: nowrap;
+    overflow-x: scroll;
+  }
+
+  .main-header__right::-webkit-scrollbar,
+.navbar-footer--list::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+    background-color: transparent;
+  }
+
+  .main-header__right::-webkit-scrollbar-thumb,
+.navbar-footer--list::-webkit-scrollbar-thumb {
+    background-color: transparent;
+  }
+
+  .main-header__right::-webkit-scrollbar-track,
+.navbar-footer--list::-webkit-scrollbar-track {
+    background-color: transparent;
+  }
+
+  .main-header__right-item + .main-header__right-item {
+    margin-left: 1rem;
+  }
+
+  .navbar-mb {
+    padding: 0 1.25rem;
+  }
+
+  .navbar-mb-logo img {
+    width: auto;
+    height: 2.25rem;
+  }
+
+  .navbar-mb-item {
+    padding: 0.375rem 0.875rem 0.375rem;
+    border-right: 0.5px solid rgba(255, 255, 255, 0.308);
+  }
+
+  .navbar-mb-item:first-of-type {
+    border-left: 0.5px solid rgba(255, 255, 255, 0.308);
+  }
+
+  .navbar-mb-item:last-of-type {
+    padding-right: 0;
+    border-right: 0;
+  }
+}
 
 /*# sourceMappingURL=responsive.css.map */
