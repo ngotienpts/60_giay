@@ -10,7 +10,10 @@
 .d-grid,
 .technology-list,
 .brand-story,
-.read-a-lot {
+.read-a-lot,
+.detail-top,
+.detail-content,
+.same-category__content {
     grid-template-columns: 1fr;
   }
 
@@ -111,6 +114,27 @@
   .navbar-mb-item:last-of-type {
     padding-right: 0;
     border-right: 0;
+  }
+
+  .same-category__content--block {
+    display: flex;
+  }
+
+  .same-category__content--block .main-row-one__center--thumb-img {
+    flex-shrink: 0;
+    width: 35%;
+  }
+
+  .same-category__content--block .main-row-one__center--thumb-content,
+.detail-read-more-content {
+    flex: 1;
+    width: 65%;
+    padding-left: 0.625rem;
+  }
+
+  .detail-read-more-content .main-row-three__left-block-category,
+.detail-read-more-content .main-row-one__left--large-sapo {
+    display: none;
   }
 }
 

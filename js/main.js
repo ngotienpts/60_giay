@@ -81,6 +81,22 @@ document.addEventListener("DOMContentLoaded", function () {
         additionalMarginBottom: 20,
       });
     },
+    // sticky sidebar main
+    stickySlidebarMainRow1: function () {
+      $(".leftSidebarRow1, .rightSidebarRow1").theiaStickySidebar({
+        containerSelector: "#main-row-1",
+        additionalMarginTop: 60,
+        additionalMarginBottom: 20,
+      });
+    },
+    // sticky sidebar detail
+    stickySlidebarDetail1: function () {
+      $(".leftSidebarDetail, .rightSidebarDetail").theiaStickySidebar({
+        containerSelector: "#detail-1",
+        additionalMarginTop: 60,
+        additionalMarginBottom: 20,
+      });
+    },
     // scroll top
     scrollFunc: function () {
       if (backTop) {
@@ -112,6 +128,8 @@ document.addEventListener("DOMContentLoaded", function () {
       this.windowScroll();
       // sticky sidebar main
       this.stickySlidebarMain();
+      this.stickySlidebarMainRow1();
+      this.stickySlidebarDetail1();
     },
   };
 
