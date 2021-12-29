@@ -75,6 +75,7 @@
   -moz-transition: 0.2s;
   -ms-transition: 0.2s;
   -o-transition: 0.2s;
+  min-width: -webkit-fill-available;
 }
 .navigation-bar-item__children:hover {
   background-color: #ca1f43;
